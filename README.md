@@ -16,7 +16,7 @@
 ### Pendente
 
 -  Cap. 2 - Um estudo de caso: projetando um editor de documentos
--  Cap. 3 Padrões de criação
+-  Cap. 3 - Padrões de criação
 -  Cap. 4 - Padrôes estruturais
 -  Cap. 5 - Padrôes comportamentais
 -  Cap. 6 - Conclusão
