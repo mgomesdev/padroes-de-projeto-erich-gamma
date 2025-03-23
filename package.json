@@ -1,19 +1,20 @@
 {
-  "name": "padroes-de-projeto-erich-gamma",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.2"
-  },
-  "dependencies": {
-    "nodemon": "^3.1.9"
-  }
+   "name": "padroes-de-projeto-erich-gamma",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "test": "vitest"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "devDependencies": {
+      "ts-node": "^10.9.2",
+      "typescript": "^5.8.2",
+      "vitest": "^3.0.9"
+   },
+   "dependencies": {
+      "nodemon": "^3.1.9"
+   }
 }
