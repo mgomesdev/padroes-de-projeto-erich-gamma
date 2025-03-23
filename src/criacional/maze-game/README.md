@@ -1,4 +1,4 @@
-### Jogo de Labirinto (Maze Game)
+# Jogo de Labirinto (Maze Game)
 
 Usaremos um exemplo comum - a construção de um labirinto (Maze, em inglês) para ilustrar as implementações.
 
