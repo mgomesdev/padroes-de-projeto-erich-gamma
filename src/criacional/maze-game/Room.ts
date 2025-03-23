@@ -1,4 +1,4 @@
-import Direction from "./Enums";
+import Direction from "./Enum";
 import MapSite from "./MapSite";
 
 class Room extends MapSite {

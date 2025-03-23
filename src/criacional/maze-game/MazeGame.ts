@@ -45,7 +45,7 @@
  */
 
 import Door from "./Door";
-import Direction from "./Enums";
+import Direction from "./Enum";
 import Maze from "./Maze";
 import Room from "./Room";
 import Wall from "./Wall";
