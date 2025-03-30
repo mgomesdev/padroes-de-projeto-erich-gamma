@@ -1,11 +1,11 @@
-### Jogo de Labirinto (Maze Game)
+# Jogo de Labirinto (Maze Game)
 
 Usaremos um exemplo comum - a construção de um labirinto (Maze, em inglês) para ilustrar as implementações.
 
 ### Regras
 
 -  O labirinto e o jogo variarão ligeiramente de padrão para padrão.
--  Algumas vezes, o jogo será simplesmente escontrar a saida do labirinto; nesse caso, o jogador provavelmente terá apenas uma visão local do labirinto.
+-  Algumas vezes, o jogo será simplesmente encontrar a saida do labirinto; nesse caso, o jogador provavelmente terá apenas uma visão local do labirinto.
 -  Algumas vezes, labirintos contêm problemas para resolver e perigos para superar, e estes jogos podem fornecer um mapa (map) da parte do labirinto que não foi explorada.
 
 > Ignoraremos muitos detalhes do que pode estar num labirinto e se um jogo de labirinto tem um unico ou varios jogadores.
