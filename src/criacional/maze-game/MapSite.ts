@@ -1,7 +1,5 @@
-import Room from "./Room";
-
 abstract class MapSite {
-   abstract enter(): { door?: Room; otherSideFrom?: Room };
+   abstract enter(): { door?: MapSite; otherSideFrom?: MapSite };
 }
 
 export default MapSite;

@@ -2,8 +2,8 @@ import { expect, describe, it } from "vitest";
 import MapSite from "./MapSite";
 
 class ConcreteMapSite extends MapSite {
-   enter(): number {
-      return 0;
+   enter() {
+      return {};
    }
 }
 
@@ -12,11 +12,12 @@ describe("Classe abstrata MapSite que representa o lugar no mapa", () => {
       it("Deve definir o método 'Enter'", () => {
          const mapSite = new ConcreteMapSite();
          const enter = mapSite.enter();
-         expect(enter).toBe(0);
+         expect(enter).toEqual({});
       });
 
       it.todo("Se a porta está aberta, você vai para a proxima sala");
       it.todo("Se a porta está fechada, machuca o seu nariz");
+
       describe.todo("Deve oferecer uma base simples para operações mais sofisticados do jogo:", () => {
          it.todo(
             "Se estiver numa sala e dizer: 'vá para leste', o jogo simplesmente determina qual MapSite está imediatamente ao leste"

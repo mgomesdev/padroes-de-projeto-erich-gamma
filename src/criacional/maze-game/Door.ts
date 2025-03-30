@@ -3,10 +3,10 @@ import Room from "./Room";
 
 class Door extends MapSite {
    private _room1: Room;
-   private _room2: Room;
-   private _isOpen?: boolean;
+   private _room2: MapSite;
+   private _isOpen: boolean;
 
-   constructor(room1: Room, room2: Room, isOpen?: boolean) {
+   constructor(room1: Room, room2: MapSite, isOpen = false) {
       super();
       this._room1 = room1;
       this._room2 = room2;
@@ -17,6 +17,9 @@ class Door extends MapSite {
       return this._room2;
    }
 
+   /* TODO:
+    *
+    */
    enter() {
       return {
          door: this.door(),
@@ -24,8 +27,12 @@ class Door extends MapSite {
       };
    }
 
-   otherSideFrom(): Room {
+   otherSideFrom() {
       return this._room1;
+   }
+
+   getIsOpen() {
+      return this._isOpen;
    }
 }
 
