@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import Direction from "./Enum";
 
-describe("Deve definir os Enum corretamente", () => {
+describe("Deve definir os Enums que especifiam os lados (norte, sul, leste, oeste)", () => {
    it("Deve definir o Enum Direction corretamente", () => {
       const direction = Direction;
       expect(direction["North"]).toBe(0);
