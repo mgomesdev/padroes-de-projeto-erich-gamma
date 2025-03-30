@@ -5,10 +5,11 @@ import Wall from "./Wall";
 import Door from "./Door";
 
 describe("Room - classe que representa as salas", () => {
-   it("Deve definir o componente Room para se rutilizado no labirinto", () => {
-      const room = new Room(1);
+   it("Deve definir o componente Room para ser utilizado no labirinto", () => {
+      const room = new Room(7);
+
       expect(room).toEqual({
-         _roomNumber: 1,
+         _roomNumber: 7,
          _sides: new Map([]),
       });
    });
@@ -16,25 +17,25 @@ describe("Room - classe que representa as salas", () => {
    describe("Deve conhecer os seus possiveis vizinhos.", () => {
       it("Deve conhecer uma outra sala (room)", () => {
          const room = new Room(7);
-         const otherRoom = new Room(3);
 
-         room.setSide(Direction["North"], new Door(room, otherRoom));
+         room.setSide(Direction["North"], new Door(room, new Room(3)));
 
-         expect(room.getSide(Direction["North"])?.enter().door).instanceOf(Room);
+         expect(room.getSide(Direction["North"])?.enter().door?.getRoomNo()).toBe(3);
       });
 
       it("Deve conhecer uma parede (wall)", () => {
          const room = new Room(7);
+
          room.setSide(Direction["North"], new Wall());
+
          expect(room.getSide(Direction["North"])).toEqual(new Wall());
       });
 
       it("Deve conhecer uma porta (door) para outra sala (room)", () => {
          const room = new Room(7);
-         const otherRoom = new Room(3);
 
          room.setSide(Direction["North"], new Wall());
-         room.setSide(Direction["East"], new Door(room, otherRoom));
+         room.setSide(Direction["East"], new Door(room, new Room(3)));
 
          const door = room.getSide(Direction["East"]);
 
@@ -43,7 +44,7 @@ describe("Room - classe que representa as salas", () => {
    });
 
    it("Cada sala deve ter quatro lados (sides)", () => {
-      const room = new Room(1);
+      const room = new Room(7);
 
       room.setSide(Direction["North"], new Wall());
       room.setSide(Direction["East"], new Wall());
@@ -51,7 +52,7 @@ describe("Room - classe que representa as salas", () => {
       room.setSide(Direction["South"], new Wall());
 
       expect(room).toEqual({
-         _roomNumber: 1,
+         _roomNumber: 7,
          _sides: new Map([
             [0, new Wall()],
             [2, new Wall()],
