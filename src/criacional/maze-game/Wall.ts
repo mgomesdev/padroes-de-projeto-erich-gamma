@@ -4,7 +4,7 @@ class Wall extends MapSite {
    wall() {}
 
    enter() {
-      return 0;
+      return {};
    }
 }
 

@@ -4,21 +4,29 @@ import Room from "./Room";
 class Door extends MapSite {
    private _room1: Room;
    private _room2: Room;
-   // private _isOpen: boolean;
+   private _isOpen?: boolean;
 
-   constructor(room1: Room, room2: Room) {
+   constructor(room1: Room, room2: Room, isOpen?: boolean) {
       super();
       this._room1 = room1;
       this._room2 = room2;
+      this._isOpen = isOpen;
    }
 
-   door(room1 = 0, room2 = 0) {}
+   door() {
+      return this._room2;
+   }
 
    enter() {
-      return 0;
+      return {
+         door: this.door(),
+         otherSideFrom: this.otherSideFrom(),
+      };
    }
 
-   otherSideFrom(room: Room) {}
+   otherSideFrom(): Room {
+      return this._room1;
+   }
 }
 
 export default Door;

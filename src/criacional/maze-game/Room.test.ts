@@ -14,7 +14,14 @@ describe("Room - classe que representa as salas", () => {
    });
 
    describe("Deve conhecer os seus possiveis vizinhos.", () => {
-      it("Deve conhecer uma outra sala (room)", () => {});
+      it("Deve conhecer uma outra sala (room)", () => {
+         const room = new Room(7);
+         const otherRoom = new Room(3);
+
+         room.setSide(Direction["North"], new Door(room, otherRoom));
+
+         expect(room.getSide(Direction["North"])?.enter().door).instanceOf(Room);
+      });
 
       it("Deve conhecer uma parede (wall)", () => {
          const room = new Room(7);
@@ -24,11 +31,10 @@ describe("Room - classe que representa as salas", () => {
 
       it("Deve conhecer uma porta (door) para outra sala (room)", () => {
          const room = new Room(7);
-         const nextRoom = new Room(5);
-         const prevRoom = new Room(3);
+         const otherRoom = new Room(3);
 
          room.setSide(Direction["North"], new Wall());
-         room.setSide(Direction["East"], new Door(prevRoom, nextRoom));
+         room.setSide(Direction["East"], new Door(room, otherRoom));
 
          const door = room.getSide(Direction["East"]);
 
