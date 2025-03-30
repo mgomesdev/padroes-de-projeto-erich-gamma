@@ -7,7 +7,6 @@ describe("Classe Door (porta)", () => {
       const room1 = new Room(1);
       const room2 = new Room(2);
       const door = new Door(room1, room2);
-
       expect(door.enter()).toBe(0);
    });
 });

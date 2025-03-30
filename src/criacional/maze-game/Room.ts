@@ -2,19 +2,25 @@ import Direction from "./Enum";
 import MapSite from "./MapSite";
 
 class Room extends MapSite {
-   private _sides: number[] = [4];
-   private _roomNumber: number = 0;
+   private _sides = new Map<Direction, MapSite>();
+   private _roomNumber: number;
 
    constructor(roomNo: number) {
       super();
       this._roomNumber = roomNo;
    }
 
-   public room(roomNo: number) {}
+   public getRoomNo() {
+      return this._roomNumber;
+   }
 
-   getSide(direction: Direction) {} //MapSite
+   getSide(direction: Direction) {
+      return this._sides.get(direction);
+   }
 
-   setSide(direction: Direction, mapSite: MapSite): void {}
+   setSide(direction: Direction, mapSite: MapSite): void {
+      this._sides.set(direction, mapSite);
+   }
 
    enter() {
       return 0;
