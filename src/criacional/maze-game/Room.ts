@@ -10,7 +10,7 @@ class Room extends MapSite {
       this._roomNumber = roomNo;
    }
 
-   public getRoomNo() {
+   getRoomNo() {
       return this._roomNumber;
    }
 
