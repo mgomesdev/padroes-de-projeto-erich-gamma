@@ -13,8 +13,8 @@
 
 -  [Cap. 1 - Introdução](#)
 -  [Cap. 2 - Um estudo de caso: projetando um editor de documentos](#)
--  [Cap. 3 - Padrôes de criação](#)
-   -  [Construção de um labirinto (maze, em inglês)](#)
+-  [Cap. 3 - Padrôes de criação](https://github.com/mgomesdev/padroes-de-projeto-erich-gamma/tree/main/src/criacional)
+   -  [Construção de um labirinto (maze, em inglês)](https://github.com/mgomesdev/padroes-de-projeto-erich-gamma/tree/main/src/criacional/maze-game)
 
 ### Pendente
 
