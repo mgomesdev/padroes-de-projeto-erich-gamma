@@ -17,7 +17,7 @@ describe("Room - classe que representa as salas", () => {
    it("Deve conseguir entrar na sala", () => {
       const room = new Room(7);
       /* TODO:
-       * atualmente estár retornando um objeto para mostrar que entrou na sala
+       * atualmente está retornando um objeto para mostrar que entrou na sala
        * assim que ajustar o retorno corretamente, atualizar este teste.
        */
       expect(room.enter()).toEqual({});

@@ -17,9 +17,6 @@ class Door extends MapSite {
       return this._room2;
    }
 
-   /* TODO:
-    *
-    */
    enter() {
       return {
          door: this.door(),
