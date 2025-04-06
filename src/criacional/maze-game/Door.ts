@@ -18,7 +18,9 @@ class Door extends MapSite {
    }
 
    enter() {
-      return "";
+      if (this.getIsOpen()) return "A porta está aberta, você vai para a proxima sala";
+
+      return "A porta está fechada, machuca o seu nariz";
    }
 
    otherSideFrom() {
@@ -27,6 +29,10 @@ class Door extends MapSite {
 
    getIsOpen() {
       return this._isOpen;
+   }
+
+   setIsOpen(isOpen: boolean) {
+      this._isOpen = isOpen;
    }
 }
 

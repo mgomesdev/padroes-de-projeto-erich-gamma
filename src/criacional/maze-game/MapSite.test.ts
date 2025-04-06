@@ -15,10 +15,6 @@ describe("Classe abstrata MapSite que representa o lugar no mapa", () => {
          expect(enter).toEqual("");
       });
 
-      it("Se a porta está aberta, você vai para a proxima sala", () => {});
-
-      it.todo("Se a porta está fechada, machuca o seu nariz");
-
       describe.todo("Deve oferecer uma base simples para operações mais sofisticados do jogo:", () => {
          it.todo(
             "Se estiver numa sala e dizer: 'vá para leste', o jogo simplesmente determina qual MapSite está imediatamente ao leste"

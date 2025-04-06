@@ -11,7 +11,18 @@ describe("Classe Door (porta)", () => {
       expect(door.getIsOpen()).toBeFalsy();
    });
 
-   it.todo("Deve entrar na porta");
+   describe("Deve entrar na porta", () => {
+      it("Se a porta está aberta, você vai para a proxima sala", () => {
+         const door = new Door(new Room(1), new Room(2));
+         door.setIsOpen(true);
+         expect(door.enter()).toBe("A porta está aberta, você vai para a proxima sala");
+      });
+
+      it("Se a porta está fechada, machuca o seu nariz", () => {
+         const door = new Door(new Room(1), new Room(2));
+         expect(door.enter()).toBe("A porta está fechada, machuca o seu nariz");
+      });
+   });
 
    it("Deve retornar a sala atual onde está a porta", () => {
       const door = new Door(new Room(7), new Room(3));

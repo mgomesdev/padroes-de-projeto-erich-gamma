@@ -28,7 +28,7 @@ describe("Room - classe que representa as salas", () => {
          room.setSide(Direction["North"], new Door(room, new Room(3)));
 
          // TODO: atualizar "" pela mensagem de que estrou na sala 'x'
-         expect(room.getSide(Direction["North"])?.enter()).toBe("");
+         expect(room.getSide(Direction["North"])?.enter()).toBe("A porta está fechada, machuca o seu nariz");
       });
 
       it("Deve conhecer uma parede (wall)", () => {
