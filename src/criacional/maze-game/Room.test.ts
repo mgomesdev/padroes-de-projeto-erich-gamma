@@ -16,38 +16,28 @@ describe("Room - classe que representa as salas", () => {
 
    it("Deve conseguir entrar na sala", () => {
       const room = new Room(7);
-      /* TODO:
-       * atualmente está retornando um objeto para mostrar que entrou na sala
-       * assim que ajustar o retorno corretamente, atualizar este teste.
-       */
       expect(room.enter()).toEqual({});
+      expect(room.getRoomNo()).toBe(7);
    });
 
    describe("Deve conhecer os seus possiveis vizinhos.", () => {
       it("Deve conhecer uma outra sala (room)", () => {
          const room = new Room(7);
-
          room.setSide(Direction["North"], new Door(room, new Room(3)));
-
-         expect(room.getSide(Direction["North"])?.enter().door?.getRoomNo()).toBe(3);
+         expect((room.getSide(Direction["North"])?.enter().door as Room).getRoomNo()).toBe(3);
       });
 
       it("Deve conhecer uma parede (wall)", () => {
          const room = new Room(7);
-
          room.setSide(Direction["North"], new Wall());
-
          expect(room.getSide(Direction["North"])).toEqual(new Wall());
       });
 
       it("Deve conhecer uma porta (door) para outra sala (room)", () => {
          const room = new Room(7);
-
          room.setSide(Direction["North"], new Wall());
          room.setSide(Direction["East"], new Door(room, new Room(3)));
-
          const door = room.getSide(Direction["East"]);
-
          expect(door).instanceOf(Door);
       });
    });
