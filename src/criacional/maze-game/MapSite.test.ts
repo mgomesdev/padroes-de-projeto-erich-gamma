@@ -1,30 +1,40 @@
 import { expect, describe, it } from "vitest";
-import MapSite from "./MapSite";
-
-class ConcreteMapSite extends MapSite {
-   enter() {
-      return "";
-   }
-}
+import Room from "./Room";
+import Direction from "./Enum";
+import Door from "./Door";
+import Wall from "./Wall";
+import ConcreteMapSite from "./ConcreteMapSite";
 
 describe("Classe abstrata MapSite que representa o lugar no mapa", () => {
-   describe("Método 'Enter', o seu significado depende do local em que voce está entrando:", () => {
-      it("Deve definir o método 'Enter'", () => {
+   it("Método 'Enter', o seu significado depende do local em que voce está entrando:", () => {
+      const mapSite = new ConcreteMapSite();
+      const enter = mapSite.enter();
+      expect(enter).toEqual("");
+   });
+
+   describe("Deve oferecer uma base simples para operações mais sofisticados do jogo:", () => {
+      it("Se estiver numa sala e dizer: 'vá para leste', o jogo simplesmente determina qual MapSite está imediatamente ao leste", () => {
          const mapSite = new ConcreteMapSite();
-         const enter = mapSite.enter();
-         expect(enter).toEqual("");
-      });
+         const room = new Room(7);
+         const door1 = new Door(room, new Room(3));
+         const door2 = new Door(room, new Room(3));
 
-      describe.todo("Deve oferecer uma base simples para operações mais sofisticados do jogo:", () => {
-         it.todo(
-            "Se estiver numa sala e dizer: 'vá para leste', o jogo simplesmente determina qual MapSite está imediatamente ao leste"
-         );
+         door2.setIsOpen(true);
 
-         it.todo("Deve chamar 'Enter' para entrar neste local");
+         room.setSide(Direction["North"], door1);
+         room.setSide(Direction["South"], new Wall());
+         room.setSide(Direction["East"], door2);
+         room.setSide(Direction["West"], new Wall());
 
-         it.todo(
-            "A operação 'Enter' especifica da subclasse determinará se a sua localização mudou ou se você machucou o nariz."
-         );
+         const operationNorth = mapSite.operation({ command: "vá para o norte", room });
+         const operationSouth = mapSite.operation({ command: "vá para o sul", room });
+         const operationEast = mapSite.operation({ command: "vá para o leste", room });
+         const operationWest = mapSite.operation({ command: "vá para o oeste", room });
+
+         expect(operationNorth).toBe("A porta está fechada, machuca o seu nariz");
+         expect(operationSouth).toBe("Machucou o nariz");
+         expect(operationEast).toBe("A porta está aberta, você vai para a proxima sala");
+         expect(operationWest).toBe("Machucou o nariz");
       });
    });
 });

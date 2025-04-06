@@ -16,9 +16,7 @@ describe("Room - classe que representa as salas", () => {
 
    it("Deve conseguir entrar na sala", () => {
       const room = new Room(7);
-
-      // TODO: atualizar "" pela mensagem de que entrou na sala 'x'
-      expect(room.enter()).toEqual("");
+      expect(room.enter()).toEqual("Você entrou na sala 7");
       expect(room.getRoomNo()).toBe(7);
    });
 
@@ -26,8 +24,6 @@ describe("Room - classe que representa as salas", () => {
       it("Deve conhecer uma outra sala (room)", () => {
          const room = new Room(7);
          room.setSide(Direction["North"], new Door(room, new Room(3)));
-
-         // TODO: atualizar "" pela mensagem de que estrou na sala 'x'
          expect(room.getSide(Direction["North"])?.enter()).toBe("A porta está fechada, machuca o seu nariz");
       });
 

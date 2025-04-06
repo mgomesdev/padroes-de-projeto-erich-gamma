@@ -23,7 +23,7 @@ class Room extends MapSite {
    }
 
    enter() {
-      return "";
+      return `Você entrou na sala ${this.getRoomNo()}`;
    }
 }
 
