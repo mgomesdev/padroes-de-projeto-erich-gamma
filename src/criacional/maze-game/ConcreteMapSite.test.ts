@@ -10,9 +10,7 @@ describe("Deve oferecer uma base simples para operações mais sofisticados do j
       const mapSite = new ConcreteMapSite();
       const room = new Room(7);
       const door1 = new Door(room, new Room(3));
-      const door2 = new Door(room, new Room(3));
-
-      door2.setIsOpen(true);
+      const door2 = new Door(room, new Room(3), true);
 
       room.setSide(Direction["North"], door1);
       room.setSide(Direction["South"], new Wall());

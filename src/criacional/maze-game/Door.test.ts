@@ -13,8 +13,7 @@ describe("Classe Door (porta)", () => {
 
    describe("Deve entrar na porta", () => {
       it("Se a porta está aberta, você vai para a proxima sala", () => {
-         const door = new Door(new Room(1), new Room(2));
-         door.setIsOpen(true);
+         const door = new Door(new Room(1), new Room(2), true);
          expect(door.enter()).toBe("A porta está aberta, você vai para a proxima sala");
       });
 

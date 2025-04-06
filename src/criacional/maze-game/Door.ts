@@ -30,10 +30,6 @@ class Door extends MapSite {
    getIsOpen() {
       return this._isOpen;
    }
-
-   setIsOpen(isOpen: boolean) {
-      this._isOpen = isOpen;
-   }
 }
 
 export default Door;
