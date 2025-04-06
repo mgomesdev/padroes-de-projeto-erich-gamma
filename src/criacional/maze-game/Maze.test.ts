@@ -11,15 +11,12 @@ describe("Maze - classe para labirintos (coleção de salas)", () => {
    it("Deve criar um labirinto como um conjunto de salas (rooms)", () => {
       const maze = new Maze();
       const room1 = new Room(1);
-
       const addRoom1 = maze.addRoom(room1);
 
       expect(addRoom1).toBe(`Sala ${room1.getRoomNo()} adicionada com sucesso!`);
-
-      const addRoom2 = maze.addRoom(room1);
-
-      expect(addRoom2).toBe(`Já existe uma sala com o numero ${room1.getRoomNo()}, escolha outro e tente novamente.`);
-
+      expect(maze.addRoom(room1)).toBe(
+         `Já existe uma sala com o numero ${room1.getRoomNo()}, escolha outro e tente novamente.`
+      );
       expect(maze).toEqual({
          _maze: new Map([
             [
@@ -33,16 +30,10 @@ describe("Maze - classe para labirintos (coleção de salas)", () => {
       });
    });
 
-   it.todo("Deve definir os relacionamentos-chave entre os componentes do labirinto.");
-
-   it.todo("Deve armazenar o numero que identifica as sala do labirinto");
-
    it("Deve achar uma sala especifica, dado um numero de sala, usando sua operação RoomNo.", () => {
       const maze = new Maze();
       const room = new Room(1);
-
       maze.addRoom(room);
-
       expect(maze.roomNo(1)).toEqual(new Room(1));
    });
 });
