@@ -2,12 +2,14 @@ import Direction from "./Enum";
 import MapSite from "./MapSite";
 import Room from "./Room";
 
-export default class ConcreteMapSite extends MapSite {
+type Command = "vá para o leste" | "vá para o norte" | "vá para o oeste" | "vá para o sul";
+
+class ConcreteMapSite extends MapSite {
    enter() {
       return "";
    }
 
-   operation({ command, room }: { command: string; room: Room }) {
+   operation({ command, room }: { command: Command; room: Room }) {
       switch (command) {
          case "vá para o leste":
             return room.getSide(Direction["East"])?.enter();
@@ -26,3 +28,5 @@ export default class ConcreteMapSite extends MapSite {
       }
    }
 }
+
+export default ConcreteMapSite;
