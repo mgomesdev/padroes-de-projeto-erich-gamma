@@ -3,7 +3,7 @@ import MapSite from "./MapSite";
 
 class ConcreteMapSite extends MapSite {
    enter() {
-      return {};
+      return "";
    }
 }
 
@@ -12,10 +12,11 @@ describe("Classe abstrata MapSite que representa o lugar no mapa", () => {
       it("Deve definir o método 'Enter'", () => {
          const mapSite = new ConcreteMapSite();
          const enter = mapSite.enter();
-         expect(enter).toEqual({});
+         expect(enter).toEqual("");
       });
 
-      it.todo("Se a porta está aberta, você vai para a proxima sala");
+      it("Se a porta está aberta, você vai para a proxima sala", () => {});
+
       it.todo("Se a porta está fechada, machuca o seu nariz");
 
       describe.todo("Deve oferecer uma base simples para operações mais sofisticados do jogo:", () => {

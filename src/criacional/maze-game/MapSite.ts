@@ -1,5 +1,5 @@
 abstract class MapSite {
-   abstract enter(): { door?: MapSite; otherSideFrom?: MapSite };
+   abstract enter(): string;
 }
 
 export default MapSite;

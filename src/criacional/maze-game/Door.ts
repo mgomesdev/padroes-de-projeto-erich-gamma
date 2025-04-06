@@ -18,10 +18,7 @@ class Door extends MapSite {
    }
 
    enter() {
-      return {
-         door: this.door(),
-         otherSideFrom: this.otherSideFrom(),
-      };
+      return "";
    }
 
    otherSideFrom() {

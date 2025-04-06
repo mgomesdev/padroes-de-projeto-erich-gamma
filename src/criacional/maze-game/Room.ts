@@ -23,7 +23,7 @@ class Room extends MapSite {
    }
 
    enter() {
-      return {};
+      return "";
    }
 }
 
