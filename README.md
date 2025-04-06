@@ -13,6 +13,8 @@
 
 -  [Cap. 1 - Introdução](#)
 -  [Cap. 2 - Um estudo de caso: projetando um editor de documentos](#)
+-  [Cap. 3 - Padrôes de criação](#)
+   -  [Construção de um labirinto (maze, em inglês)](#)
 
 ### Pendente
 
