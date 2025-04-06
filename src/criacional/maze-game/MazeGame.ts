@@ -8,6 +8,7 @@ class MazeGame {
    createMaze() {
       const maze = new Maze();
       const r1 = new Room(1);
+      const r21 = new Room(1);
       const r2 = new Room(2);
       const theDoor = new Door(r1, r2);
 
@@ -23,9 +24,14 @@ class MazeGame {
 
       maze.addRoom(r1);
       maze.addRoom(r2);
+      maze.addRoom(r21);
 
       return maze;
    }
 }
+
+const mazeGame = new MazeGame();
+
+console.log(mazeGame.createMaze());
 
 export default MazeGame;
