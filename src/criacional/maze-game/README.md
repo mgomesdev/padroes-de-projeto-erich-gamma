@@ -20,7 +20,7 @@ Usaremos um exemplo comum - a construção de um labirinto (Maze, em inglês) pa
    -  As classes Room, Door e Wall definem os componentes do labirinto usados em todos os nossos exemplos.
    -  Definimos somente partes dessas classes que são importantes para criar um labirinto.
 
-> Igonoraremos jogadores, operações para exibir informações e vagar pelo labirinto e outras funcionalidades importantes que não são relevantes para a construção do labirinto.
+> Ignoraremos jogadores, operações para exibir informações e vagar pelo labirinto e outras funcionalidades importantes que não são relevantes para a construção do labirinto.
 
 ### Diagrama mostrando os relacionamentos entre as classes
 
