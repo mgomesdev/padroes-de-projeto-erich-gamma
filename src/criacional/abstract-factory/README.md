@@ -1,6 +1,7 @@
 ### Aplicando o padrão Abstract Factory (Kit) para criar os labirintos
 
--  Aplicaremos o padrão `abstract factory` para criar os labirintos.
+-  Aplicaremos o padrão `Abstract Factory` para criar os labirintos.
+-  `Abstract Factory` é um padrão criacional com o propósito de criação de objetos.
 
 ### MazeFactory
 
@@ -19,13 +20,13 @@
 
 -  Suponha agora que queiramos construir um jogo de labirinto no qual uma sala pode ter uma bomba colocada nela.
 -  Se a bomba detona, ela danificará as paredes (no minimo).
--  Podemos ocnstruir uma subclasse de `Room` para registrar se uma sala tem uma bomba nela e se a bomba explodiu.
+-  Podemos construir uma subclasse de `Room` para registrar se uma sala tem uma bomba nela e se a bomba explodiu.
 -  Também necessitaremos de uma subclasse de `Wall` para manter o registro do dano feito á parede.
 -  Chamaremos estas classes de `RoomWithABomb` e `BombedWall`.
 
 ### BombedMazeFactory
 
--  A ultima classe que definiremos é `BombedMazeFactory`, uma sublcasse de `MazeFactory` que assegura que as paredes são da classe `BombedWall` e as salas são da classe `RoomWithABomb`.
+-  A ultima classe que definiremos é `BombedMazeFactory`, uma subclasse de `MazeFactory` que assegura que as paredes são da classe `BombedWall` e as salas são da classe `RoomWithABomb`.
 -  `BombedMazeFactory` somente necessita redefinir duas funções: `MakeWall` e `MakeRoom`.
 -  Para construir um simples labirinto que pode conter bombas, simplesmente chamamos `CreateMaze` com uma `BombedMazeFactory`.
 
