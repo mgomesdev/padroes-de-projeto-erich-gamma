@@ -9,4 +9,7 @@ describe("A classe MazeFactory pode criar componentes de labirintos", () => {
    it.todo(
       "Os programas que constroem labirintos recebem MazeFacotry como argumento, de maneira que o programador pode especificar as classes de salas, paredes e portas a serem construidas."
    );
+   it.todo(
+      "Deve modificar o método CreateMaze em MazeGame para remover a codificação rigida dos nomes das classes, simplificando a criação de labirintos diferentes."
+   );
 });
