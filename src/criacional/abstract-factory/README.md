@@ -3,6 +3,8 @@
 -  Aplicaremos o padrão `Abstract Factory` para criar os labirintos.
 -  `Abstract Factory` é um padrão criacional com o propósito de criação de objetos.
 
+![maze game - abstract factory](/readme/criacional/abstract-factory/abstract-facoty.png)
+
 ### MazeFactory
 
 -  A classe `MazeFactory` pode criar componentes de labirintos.
